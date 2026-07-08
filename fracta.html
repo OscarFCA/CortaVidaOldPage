@@ -55,11 +55,11 @@ a{color:inherit;text-decoration:none}
 .pthumb{position:absolute;inset:0;border-radius:16px;overflow:hidden;background:radial-gradient(120% 95% at 50% 42%,#dcdcda 0%,#a9a9a7 80%,#8d8d8b 100%)}
 .pthumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .45s ease}
 .pcard:hover .pthumb img{transform:scale(1.03);filter:brightness(.7) blur(3.5px)}
-.tab{position:absolute;top:0;left:0;z-index:3;background:var(--frame);height:52px;display:inline-flex;align-items:center;gap:10px;padding:0 24px 0 20px;border-top-left-radius:16px;border-bottom-right-radius:28px;color:#f4f1ea;font-family:var(--serif);font-size:15.5px;letter-spacing:.05em;white-space:nowrap}
+.tab{position:absolute;top:0;left:0;z-index:3;background:var(--frame);height:52px;display:inline-flex;align-items:center;gap:10px;padding:0 24px 0 20px;border-top-left-radius:16px;border-bottom-right-radius:42px;color:#f4f1ea;font-family:var(--serif);font-size:15.5px;letter-spacing:.05em;white-space:nowrap}
 .tab .arw{opacity:0;transform:translateX(-4px);transition:.3s ease}
 .pcard:hover .tab .arw{opacity:1;transform:none}
-.tab::after{content:"";position:absolute;bottom:-24px;left:0;width:24px;height:24px;background:radial-gradient(circle at bottom left,transparent 24px,var(--frame) 24.5px)}
-.tab::before{content:"";position:absolute;top:0;right:-24px;width:24px;height:24px;background:radial-gradient(circle at top right,transparent 24px,var(--frame) 24.5px)}
+.tab::after{content:"";position:absolute;bottom:-40px;left:0;width:40px;height:40px;background:radial-gradient(circle at bottom left,transparent 40px,var(--frame) 40.5px)}
+.tab::before{content:"";position:absolute;top:0;right:-40px;width:40px;height:40px;background:radial-gradient(circle at top right,transparent 40px,var(--frame) 40.5px)}
 .pview{position:absolute;left:14px;right:14px;bottom:14px;z-index:3;background:rgba(9,7,5,.92);border-radius:12px;padding:16px 24px;display:flex;justify-content:flex-end;align-items:center;opacity:0;transform:translateY(10px);transition:.4s ease;pointer-events:none}
 .pcard:hover .pview{opacity:1;transform:none}
 .pview span{color:#fff;font-size:15px;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:2px}
