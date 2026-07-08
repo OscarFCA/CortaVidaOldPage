@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shop — Corta Vida</title>
-<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png">
+<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -103,6 +103,48 @@ a{color:inherit;text-decoration:none}
   .shop-head h1{font-size:34px}
   .foot-left,.footer .wrap{grid-template-columns:1fr}
 }
+
+/* ===== responsive (mobile/tablet) ===== */
+.nav-toggle{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px;z-index:40}
+.nav-toggle span{display:block;width:23px;height:2px;background:#efe9df;margin:5px 0;transition:.3s ease}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .ah-txt{padding:56px 44px}.ah-txt h1{font-size:44px}
+  .hero-card h1{font-size:34px}
+}
+@media(max-width:900px){.nav{gap:14px;background:rgba(22,16,12,.6);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav-toggle{display:block}
+  .nav-right{display:none!important}
+  .nav-links{display:flex!important;position:fixed;inset:0;margin:0;background:rgba(18,13,10,.98);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);flex-direction:column;justify-content:center;align-items:center;gap:28px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,visibility .32s ease;z-index:35}
+  .nav-links.open{opacity:1;visibility:visible;pointer-events:auto}
+  .nav-links>a,.drop>span{font-size:24px!important;opacity:1}
+  .drop{position:static}
+  .drop-menu{position:static;opacity:1!important;visibility:visible!important;transform:none!important;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;margin-top:12px;align-items:center;gap:12px;min-width:0}
+  .drop-menu a{font-size:18px;opacity:.75}
+  .about-hero,.contact,.two,.cols,.filters,.footer .wrap,.foot-left{grid-template-columns:1fr!important}
+  .about-hero{min-height:0}.ah-img{min-height:340px}.ah-txt{padding:46px 34px;justify-content:flex-start}.ah-txt h1{font-size:40px}
+  .filter.home{padding:16px!important}
+  .hero{height:64vh;min-height:440px}
+  .col{height:360px}
+  .contact-img{min-height:320px}
+  h1{font-size:38px!important}
+  .quote p{font-size:24px}
+}
+@media(max-width:560px){
+  .frame{padding:9px}
+  .pgrid{grid-template-columns:1fr}
+  h1{font-size:29px!important}
+  .hero-card,.shop-head,.coll-head,.ah-txt,.txtcard,.formcard,.foot-left,.foot-right,.quote{padding-left:24px!important;padding-right:24px!important}
+  .shop-head,.coll-head{padding-top:96px!important}
+  .hero-card{left:12px;right:12px;bottom:74px;padding:18px 20px;max-width:none}
+  .quote p{font-size:20px}.foot-right p{font-size:22px}
+  .grid2{grid-template-columns:1fr!important}
+  .ah-txt h1{font-size:30px}
+  .nav{padding:10px 16px}
+}
 </style>
 </head>
 <body>
@@ -119,12 +161,13 @@ a{color:inherit;text-decoration:none}
 
     <header class="header">
       <div class="nav">
-        <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">Corta Vida</a>
+        <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">Corta Vida</a>
         <nav class="nav-links">
           <a href="shop.html">Shop</a>
           <a href="collections.html">Collections</a>
           <div class="drop"><span>About&nbsp;+</span><div class="drop-menu"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
         </nav>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <div class="nav-right">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
           <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>(0)</span>
@@ -144,18 +187,18 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <section class="pgrid">
-      <div class="pcard"><div class="tab">BRAZALETE BRUNY ARCH<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/uOJNTH6E7bvUousmmYNElI8zqoQ.jpg" alt="Brazalete Bruny Arch"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Brazalete Bruny Arch"></a></div>
-      <div class="pcard"><div class="tab">TUWAD - TUWADAN<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/KQitUsjq8wuqwd4dGZqv6WAgrW4.jpg" alt="Tuwad Tuwadan"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Tuwad Tuwadan"></a></div>
-      <div class="pcard"><div class="tab">PECATU<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/uXHsrQwsqMj1Nse0QoCFyB50yB8.jpg" alt="Pecatu"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Pecatu"></a></div>
-      <div class="pcard"><div class="tab">TA'MARIJA<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/jjUDc2Wlda6WKMhzMCiNMNgTuY.jpg" alt="Ta'marija"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Ta'marija"></a></div>
+      <div class="pcard"><div class="tab">BRAZALETE BRUNY ARCH<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/uOJNTH6E7bvUousmmYNElI8zqoQ.webp" alt="Brazalete Bruny Arch"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Brazalete Bruny Arch"></a></div>
+      <div class="pcard"><div class="tab">TUWAD - TUWADAN<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/KQitUsjq8wuqwd4dGZqv6WAgrW4.webp" alt="Tuwad Tuwadan"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Tuwad Tuwadan"></a></div>
+      <div class="pcard"><div class="tab">PECATU<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/uXHsrQwsqMj1Nse0QoCFyB50yB8.webp" alt="Pecatu"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Pecatu"></a></div>
+      <div class="pcard"><div class="tab">TA'MARIJA<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/jjUDc2Wlda6WKMhzMCiNMNgTuY.webp" alt="Ta'marija"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Ta'marija"></a></div>
 
-      <div class="pcard"><div class="tab">DAISY LAKE<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.jpg" alt="Daisy Lake"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Daisy Lake"></a></div>
-      <div class="pcard"><div class="tab">CLAY CLIFF<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/xYM0GBKMDOWiHTBOoemOeWql0.jpg" alt="Clay Cliff"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Clay Cliff"></a></div>
-      <div class="pcard"><div class="tab">MONTGÓ<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/UbySdIct2Qqh5GS0iZWyyahdVKU.jpg" alt="Montgó"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Montgó"></a></div>
-      <div class="pcard"><div class="tab">MAYA MAY<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/TUGoDervhK663h2sPZAFJ5i4wo.jpg" alt="Maya May"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Maya May"></a></div>
+      <div class="pcard"><div class="tab">DAISY LAKE<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.webp" alt="Daisy Lake"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Daisy Lake"></a></div>
+      <div class="pcard"><div class="tab">CLAY CLIFF<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/xYM0GBKMDOWiHTBOoemOeWql0.webp" alt="Clay Cliff"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Clay Cliff"></a></div>
+      <div class="pcard"><div class="tab">MONTGÓ<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/UbySdIct2Qqh5GS0iZWyyahdVKU.webp" alt="Montgó"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Montgó"></a></div>
+      <div class="pcard"><div class="tab">MAYA MAY<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/TUGoDervhK663h2sPZAFJ5i4wo.webp" alt="Maya May"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Maya May"></a></div>
 
-      <div class="pcard"><div class="tab">MAINGON<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.jpg" alt="Maingon"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Maingon"></a></div>
-      <div class="pcard"><div class="tab">GUINSAANAN<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/GjWasE4IwsX63kzsLk8pnJNV0c.jpg" alt="Guinsaanan"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Guinsaanan"></a></div>
+      <div class="pcard"><div class="tab">MAINGON<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.webp" alt="Maingon"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Maingon"></a></div>
+      <div class="pcard"><div class="tab">GUINSAANAN<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/GjWasE4IwsX63kzsLk8pnJNV0c.webp" alt="Guinsaanan"></div><div class="pview"><span>View</span></div><a class="plink" href="shop.html" aria-label="Guinsaanan"></a></div>
       <div class="pcard soon"><div class="tab">coming soon</div><div class="pthumb"></div></div>
     </section>
 
@@ -165,7 +208,7 @@ a{color:inherit;text-decoration:none}
       <div class="wrap">
         <div class="foot-left">
           <div class="foot-brand">
-            <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">Corta Vida</a>
+            <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">Corta Vida</a>
             <p>Unique handcrafted jewelry inspired by journeys, emotions, and the raw beauty of nature's imperfections.</p>
           </div>
           <div class="foot-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About</a></div>
@@ -177,5 +220,6 @@ a{color:inherit;text-decoration:none}
 
   </div>
 </div>
+<script>(function(){var t=document.querySelector(".nav-toggle"),n=document.querySelector(".nav-links");if(!t||!n)return;t.addEventListener("click",function(){n.classList.toggle("open");t.classList.toggle("active");document.body.style.overflow=n.classList.contains("open")?"hidden":"";});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("open");t.classList.remove("active");document.body.style.overflow="";});});})();</script>
 </body>
 </html>

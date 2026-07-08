@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Corta Vida</title>
-<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png">
+<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -161,6 +161,48 @@ a{color:inherit;text-decoration:none}
   .prod-track{grid-template-columns:repeat(2,1fr)}
   .foot-left,.footer .wrap{grid-template-columns:1fr}
 }
+
+/* ===== responsive (mobile/tablet) ===== */
+.nav-toggle{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px;z-index:40}
+.nav-toggle span{display:block;width:23px;height:2px;background:#efe9df;margin:5px 0;transition:.3s ease}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .ah-txt{padding:56px 44px}.ah-txt h1{font-size:44px}
+  .hero-card h1{font-size:34px}
+}
+@media(max-width:900px){.nav{gap:14px;background:rgba(22,16,12,.6);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav-toggle{display:block}
+  .nav-right{display:none!important}
+  .nav-links{display:flex!important;position:fixed;inset:0;margin:0;background:rgba(18,13,10,.98);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);flex-direction:column;justify-content:center;align-items:center;gap:28px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,visibility .32s ease;z-index:35}
+  .nav-links.open{opacity:1;visibility:visible;pointer-events:auto}
+  .nav-links>a,.drop>span{font-size:24px!important;opacity:1}
+  .drop{position:static}
+  .drop-menu{position:static;opacity:1!important;visibility:visible!important;transform:none!important;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;margin-top:12px;align-items:center;gap:12px;min-width:0}
+  .drop-menu a{font-size:18px;opacity:.75}
+  .about-hero,.contact,.two,.cols,.filters,.footer .wrap,.foot-left{grid-template-columns:1fr!important}
+  .about-hero{min-height:0}.ah-img{min-height:340px}.ah-txt{padding:46px 34px;justify-content:flex-start}.ah-txt h1{font-size:40px}
+  .filter.home{padding:16px!important}
+  .hero{height:64vh;min-height:440px}
+  .col{height:360px}
+  .contact-img{min-height:320px}
+  h1{font-size:38px!important}
+  .quote p{font-size:24px}
+}
+@media(max-width:560px){
+  .frame{padding:9px}
+  .pgrid{grid-template-columns:1fr}
+  h1{font-size:29px!important}
+  .hero-card,.shop-head,.coll-head,.ah-txt,.txtcard,.formcard,.foot-left,.foot-right,.quote{padding-left:24px!important;padding-right:24px!important}
+  .shop-head,.coll-head{padding-top:96px!important}
+  .hero-card{left:12px;right:12px;bottom:74px;padding:18px 20px;max-width:none}
+  .quote p{font-size:20px}.foot-right p{font-size:22px}
+  .grid2{grid-template-columns:1fr!important}
+  .ah-txt h1{font-size:30px}
+  .nav{padding:10px 16px}
+}
 </style>
 </head>
 <body>
@@ -178,7 +220,7 @@ a{color:inherit;text-decoration:none}
     <header class="header">
       <div class="nav">
         <a class="brand" href="index.html">
-          <img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">
+          <img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">
           Corta Vida
         </a>
         <nav class="nav-links">
@@ -186,6 +228,7 @@ a{color:inherit;text-decoration:none}
           <a href="collections.html">Collections</a>
           <div class="drop"><span>About&nbsp;+</span><div class="drop-menu"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
         </nav>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <div class="nav-right">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
           <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>(0)</span>
@@ -196,9 +239,9 @@ a{color:inherit;text-decoration:none}
     <section class="hero">
       <div class="hero-slides">
         <div class="slide on"><video src="./assets/WI1OpjBNTkdWRRYlUebjouNGL8E.mp4" autoplay muted loop playsinline></video></div>
-        <div class="slide"><img src="./Home_files/JTt11mXFB966PCVTwUra5xEnGcA.jpg" alt=""></div>
+        <div class="slide"><img src="./Home_files/JTt11mXFB966PCVTwUra5xEnGcA.webp" alt=""></div>
         <div class="slide"><video src="./assets/KthtXkD5ji5e8R147soYsnHJRm0.mp4" autoplay muted loop playsinline></video></div>
-        <div class="slide"><img src="./Home_files/fOp5b3QCZyQIpgbqhG4O4aJQE8w.png" alt=""></div>
+        <div class="slide"><img src="./Home_files/fOp5b3QCZyQIpgbqhG4O4aJQE8w.webp" alt=""></div>
       </div>
       <button class="hero-arrow prev" aria-label="prev"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
       <button class="hero-arrow next" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
@@ -222,10 +265,10 @@ a{color:inherit;text-decoration:none}
     <section class="products">
       <div class="wrap" style="position:relative">
         <div class="prod-track">
-          <div class="card"><span class="name">BRAZALETE BRUNY ARCH<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/uOJNTH6E7bvUousmmYNElI8zqoQ.jpg" alt="Brazalete Bruny Arch"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Brazalete Bruny Arch"></a></div>
-          <div class="card"><span class="name">TUWAD - TUWADAN<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/TUGoDervhK663h2sPZAFJ5i4wo.jpg" alt="Tuwad Tuwadan"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Tuwad Tuwadan"></a></div>
-          <div class="card"><span class="name">DAISY LAKE<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.jpg" alt="Daisy Lake"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Daisy Lake"></a></div>
-          <div class="card"><span class="name">MAINGON<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.jpg" alt="Maingon"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Maingon"></a></div>
+          <div class="card"><span class="name">BRAZALETE BRUNY ARCH<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/uOJNTH6E7bvUousmmYNElI8zqoQ.webp" alt="Brazalete Bruny Arch"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Brazalete Bruny Arch"></a></div>
+          <div class="card"><span class="name">TUWAD - TUWADAN<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/TUGoDervhK663h2sPZAFJ5i4wo.webp" alt="Tuwad Tuwadan"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Tuwad Tuwadan"></a></div>
+          <div class="card"><span class="name">DAISY LAKE<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.webp" alt="Daisy Lake"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Daisy Lake"></a></div>
+          <div class="card"><span class="name">MAINGON<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.webp" alt="Maingon"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Maingon"></a></div>
         </div>
         <button class="prod-next" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
@@ -239,15 +282,15 @@ a{color:inherit;text-decoration:none}
           <p>Corta Vida was born in me during a journey, in the midst of those simple moments that somehow stay with you forever.</p>
           <a href="about.html">More About Us</a>
         </div>
-        <div class="about-img"><img src="./Home_files/U2XDJfRbp2rzMoJV1Q4pTzUFd8I.png" alt="Corta Vida artisan"></div>
+        <div class="about-img"><img src="./Home_files/U2XDJfRbp2rzMoJV1Q4pTzUFd8I.webp" alt="Corta Vida artisan"></div>
       </div>
     </section>
 
     <div class="bar">Our collaborations</div>
     <section class="collab-panel">
         <div class="collab-track">
-          <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.png" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.png" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.png" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.png" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.png" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.png" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.png" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.png" alt="Muntanya">
-          <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.png" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.png" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.png" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.png" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.png" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.png" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.png" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.png" alt="Muntanya">
+          <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.webp" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.webp" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.webp" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.webp" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.webp" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.webp" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.webp" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.webp" alt="Muntanya">
+          <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.webp" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.webp" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.webp" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.webp" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.webp" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.webp" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.webp" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.webp" alt="Muntanya">
         </div>
     </section>
 
@@ -255,13 +298,13 @@ a{color:inherit;text-decoration:none}
     <section class="collections">
       <div class="wrap">
         <div class="bento">
-          <div class="b-mayahuel"><img src="./Home_files/8QYEXTUXiPmwC4yCt4gGA0XaVA.jpg" alt="Mayahuel">
+          <div class="b-mayahuel"><img src="./Home_files/8QYEXTUXiPmwC4yCt4gGA0XaVA.webp" alt="Mayahuel">
             <div class="overlay-card"><h3>Mayahuel</h3><p>Inspired by the idea of fractures and irregular forms found in the nature.</p><a href="mayahuel.html">View Collection</a></div>
           </div>
-          <div class="b-fracta-img"><img src="./Home_files/8jXcugae0Zj5beAnODovUO1U4Y.jpg" alt="Fracta"></div>
+          <div class="b-fracta-img"><img src="./Home_files/8jXcugae0Zj5beAnODovUO1U4Y.webp" alt="Fracta"></div>
           <div class="b-fracta-txt b-txt"><h3>Fracta</h3><p>This collection is my way of sharing small pieces of the world that left a mark on me—places where I found myself, got lost, or simply breathed in peace</p><a href="fracta.html">View Collection</a></div>
           <div class="b-frag-txt b-txt"><h3>Fragments of the World,<br>Worn by You.</h3><p>Exclusive designs shaped by travels and moments, each jewel capturing the essence of individuality and timeless expression.</p><a href="shop.html">View Collection</a></div>
-          <div class="b-frag-img"><img src="./Home_files/t5QN0MQMMNX1zPgmz06HiYzaFM.jpg" alt="Fragments"></div>
+          <div class="b-frag-img"><img src="./Home_files/t5QN0MQMMNX1zPgmz06HiYzaFM.webp" alt="Fragments"></div>
         </div>
       </div>
     </section>
@@ -273,7 +316,7 @@ a{color:inherit;text-decoration:none}
         <div class="foot-left">
           <div class="foot-brand">
             <a class="brand" href="index.html">
-              <img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">
+              <img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">
               Corta Vida
             </a>
             <p>Unique handcrafted jewelry inspired by journeys, emotions, and the raw beauty of nature's imperfections.</p>
@@ -301,5 +344,6 @@ a{color:inherit;text-decoration:none}
   auto();
 })();
 </script>
+<script>(function(){var t=document.querySelector(".nav-toggle"),n=document.querySelector(".nav-links");if(!t||!n)return;t.addEventListener("click",function(){n.classList.toggle("open");t.classList.toggle("active");document.body.style.overflow=n.classList.contains("open")?"hidden":"";});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("open");t.classList.remove("active");document.body.style.overflow="";});});})();</script>
 </body>
 </html>
