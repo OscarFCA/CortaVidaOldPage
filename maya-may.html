@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maya May — Corta Vida</title>
+<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#3b2d28;--gold:#b98f5b;--cream:#f3f0ea;--ink:#2a211d;--frame:#15100d;
+  --serif:'Cormorant Garamond',Georgia,serif;--body:'EB Garamond',Georgia,serif;--sans:'Poppins',-apple-system,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--frame);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.frame{padding:13px;background:var(--frame)}
+.page{position:relative;background:var(--frame);display:flex;flex-direction:column;gap:13px}
+.announce{background:var(--cream);color:#3f352e;border-radius:16px;overflow:hidden;white-space:nowrap;padding:11px 0;margin-bottom:13px}
+.announce .marq{display:inline-block;white-space:nowrap;animation:announce 34s linear infinite;font-size:15px}
+.announce .marq span{padding:0 6px;opacity:.9}
+@keyframes announce{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.header{position:absolute;top:17px;left:17px;right:17px;z-index:30}
+.nav{background:rgba(26,20,16,.32);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);border-radius:46px;padding:11px 26px;display:flex;align-items:center;gap:32px;color:#efe9df}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;font-weight:500}
+.brand img{width:27px;height:27px;object-fit:contain;filter:brightness(1.35) contrast(1.05)}
+.nav-links{display:flex;gap:26px;font-family:var(--sans);font-weight:300;font-size:14px;letter-spacing:.02em}
+.nav-links a{opacity:.94}
+.drop{position:relative}.drop>span{cursor:pointer;opacity:.94}
+.drop-menu{position:absolute;top:calc(100% + 16px);left:-14px;background:rgba(24,18,14,.94);backdrop-filter:blur(11px);border-radius:14px;padding:7px;display:flex;flex-direction:column;min-width:150px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s ease}
+.drop:hover .drop-menu{opacity:1;visibility:visible;transform:none}
+.drop-menu a{padding:10px 15px;border-radius:9px;font-size:14px;opacity:.9}
+.drop-menu a:hover{background:rgba(255,255,255,.08);opacity:1}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:18px;font-family:var(--sans);font-weight:300;font-size:14px}
+.nav-right svg{width:18px;height:18px;stroke:#efe9df;fill:none;stroke-width:1.5}
+.nav-right .bag{display:flex;align-items:center;gap:7px}
+
+/* detail top */
+.detail-top{display:grid;grid-template-columns:1fr 1fr;gap:13px;align-items:start}
+.gallery{display:flex;flex-direction:column;gap:13px}
+.shot{border-radius:16px;overflow:hidden;aspect-ratio:1/1;background:radial-gradient(120% 95% at 50% 42%,#dcdcda,#a9a9a7 82%,#8d8d8b)}
+.shot.dark{background:radial-gradient(120% 110% at 50% 42%,#2a2622,#0a0908 78%)}
+.shot img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:10px;justify-content:center;padding:2px 0 6px}
+.thumbs img{width:54px;height:54px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.12);cursor:pointer}
+.order{display:flex;flex-direction:column;gap:13px}
+.order-card{background:var(--brown);border-radius:16px;padding:104px 40px 40px}
+.order-card h1{font-family:var(--serif);color:#f2ede4;font-size:36px;font-weight:500}
+.order-card .desc{margin-top:14px;color:#c7bcae;font-size:15px;line-height:1.55;max-width:420px}
+.qtyrow{display:flex;gap:12px;margin-top:24px}
+.qty{display:flex;align-items:center;gap:0;background:rgba(255,255,255,.06);border-radius:10px;overflow:hidden}
+.qty button{width:40px;height:44px;background:none;border:none;color:#e9dfce;font-size:18px;cursor:pointer}
+.qty span{min-width:34px;text-align:center;color:#f2ede4;font-size:15px}
+.qtyrow input{flex:1;background:#fff;border:none;border-radius:10px;padding:0 15px;font-family:var(--body);font-size:14px;color:#2a211d;outline:none}
+.hint{margin-top:20px;color:#a99c8c;font-size:14px;line-height:1.5}
+.submit{margin-top:12px;display:block;text-align:center;background:var(--gold);color:#241a12;font-family:var(--sans);font-weight:400;font-size:14px;padding:14px;border-radius:40px}
+.submit:hover{filter:brightness(1.06)}
+.chips{background:var(--cream);border-radius:14px;padding:16px 20px;display:flex;flex-wrap:wrap;justify-content:center;gap:26px}
+.chips span{display:flex;align-items:center;gap:8px;font-size:14px;color:#41372f}
+.chips svg{width:16px;height:16px;stroke:#5b4d40;fill:none;stroke-width:1.5}
+
+/* bars */
+.bar{background:var(--brown);text-align:center;padding:18px 22px;color:var(--gold);font-family:var(--serif);font-size:18px;letter-spacing:.06em;border-radius:16px}
+.bar.between{display:flex;align-items:center;justify-content:center;position:relative}
+.bar.between.small{padding:15px 20px;font-size:16px}
+.bar .ig{position:absolute;right:24px;top:50%;transform:translateY(-50%)}
+.bar .ig svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+
+/* two equal (details + craft) */
+.two-eq{display:grid;grid-template-columns:1fr 1fr;gap:13px;align-items:stretch}
+.imgcard{border-radius:16px;overflow:hidden;min-height:460px}
+.imgcard img{width:100%;height:100%;object-fit:cover}
+.storycard{background:var(--brown);border-radius:16px;padding:56px 54px;display:flex;flex-direction:column;justify-content:center}
+.storycard h2{font-family:var(--serif);color:#f2ede4;font-size:34px;font-weight:500;line-height:1.05;margin-bottom:14px}
+.storycard .meta{color:var(--gold);font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;line-height:1.7;margin-bottom:14px}
+.storycard .date{color:#a99c8c;font-size:14px;font-style:italic;margin-bottom:20px}
+.storycard p{color:#c7bcae;font-size:15.5px;line-height:1.6;margin-bottom:14px;max-width:520px}
+.storycard.craft p{font-style:italic;color:#cabfb2}
+
+/* you might like grid */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pcard{position:relative;aspect-ratio:104/134;cursor:pointer}
+.pthumb{position:absolute;inset:0;border-radius:16px;overflow:hidden;background:radial-gradient(120% 95% at 50% 42%,#dcdcda,#a9a9a7 80%,#8d8d8b)}
+.pthumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .45s ease}
+.pcard:hover .pthumb img{transform:scale(1.03);filter:brightness(.7) blur(3.5px)}
+.tab{position:absolute;top:0;left:0;z-index:3;background:var(--frame);height:46px;display:inline-flex;align-items:center;gap:9px;padding:0 22px 0 18px;border-top-left-radius:16px;border-bottom-right-radius:18px;color:#f4f1ea;font-family:var(--serif);font-size:14.5px;letter-spacing:.04em;white-space:nowrap}
+.tab .arw{opacity:0;transform:translateX(-4px);transition:.3s ease}
+.pcard:hover .tab .arw{opacity:1;transform:none}
+.tab::after{content:"";position:absolute;bottom:-16px;left:0;width:16px;height:16px;background:radial-gradient(circle at bottom left,transparent 16px,var(--frame) 16.5px)}
+.tab::before{content:"";position:absolute;top:0;right:-16px;width:16px;height:16px;background:radial-gradient(circle at top right,transparent 16px,var(--frame) 16.5px)}
+.pview{position:absolute;left:12px;right:12px;bottom:12px;z-index:3;background:rgba(9,7,5,.92);border-radius:12px;padding:15px 22px;display:flex;justify-content:flex-end;opacity:0;transform:translateY(10px);transition:.4s ease;pointer-events:none}
+.pcard:hover .pview{opacity:1;transform:none}
+.pview span{color:#fff;font-size:14px;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:2px}
+.plink{position:absolute;inset:0;z-index:4}
+
+/* footer */
+.footer .wrap{display:grid;grid-template-columns:1.9fr 1.1fr;gap:14px}
+.foot-left{background:#f3f0ea;border-radius:16px;padding:34px 40px;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:20px}
+.foot-brand{display:flex;flex-direction:column;gap:14px}
+.foot-brand .brand{color:#2a211d}.foot-brand .brand img{filter:none}
+.foot-brand p{color:#5c5147;font-size:14px;line-height:1.45;max-width:230px}
+.foot-col h4{color:#8a7d70;font-size:13px;font-weight:500;letter-spacing:.04em;margin-bottom:12px}
+.foot-col a{display:block;color:#2a211d;font-size:14px;margin-bottom:8px}
+.foot-right{background:#f3f0ea;border-radius:16px;padding:40px;display:flex;align-items:center}
+.foot-right p{font-family:var(--serif);color:#2a211d;font-size:29px;line-height:1.12;font-weight:500}
+
+/* ===== responsive ===== */
+.nav-toggle{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px;z-index:40}
+.nav-toggle span{display:block;width:23px;height:2px;background:#efe9df;margin:5px 0;transition:.3s ease}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1024px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .nav{gap:14px;background:rgba(22,16,12,.6);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .nav-toggle{display:block}
+  .nav-right{display:none!important}
+  .nav-links{display:flex!important;position:fixed;inset:0;margin:0;background:rgba(18,13,10,.98);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);flex-direction:column;justify-content:center;align-items:center;gap:28px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,visibility .32s ease;z-index:35}
+  .nav-links.open{opacity:1;visibility:visible;pointer-events:auto}
+  .nav-links>a,.drop>span{font-size:24px!important;opacity:1}
+  .drop{position:static}
+  .drop-menu{position:static;opacity:1!important;visibility:visible!important;transform:none!important;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;margin-top:12px;align-items:center;gap:12px;min-width:0}
+  .drop-menu a{font-size:18px;opacity:.75}
+  .detail-top,.two-eq,.footer .wrap,.foot-left{grid-template-columns:1fr!important}
+  .order-card{padding:44px 30px}
+  .imgcard{min-height:340px}
+  .storycard{padding:44px 32px}
+  h1{font-size:34px!important}
+}
+@media(max-width:560px){
+  .frame{padding:9px}
+  .pgrid{grid-template-columns:1fr}
+  .nav{padding:10px 16px}
+  .order-card h1{font-size:30px}
+  .qtyrow{flex-direction:column}
+  .chips{gap:16px;padding:14px}
+  .storycard h2{font-size:28px}
+  .foot-right p{font-size:22px}
+}
+
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="announce"><div class="marq"><span>✦ Discover the essence of Fracta. &nbsp;–&nbsp; Handcrafted. Unique. Coming soon to your story. &nbsp;–&nbsp; A new chapter begins — Discover Corta Vida.</span><span>✦ Discover the essence of Fracta. &nbsp;–&nbsp; Handcrafted. Unique. Coming soon to your story. &nbsp;–&nbsp; A new chapter begins — Discover Corta Vida.</span></div></div>
+  <div class="page">
+    <header class="header">
+      <div class="nav">
+        <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">Corta Vida</a>
+        <nav class="nav-links">
+          <a href="shop.html">Shop</a>
+          <a href="collections.html">Collections</a>
+          <div class="drop"><span>About&nbsp;+</span><div class="drop-menu"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        </nav>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <div class="nav-right">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>(0)</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="detail-top">
+      <div class="gallery">
+        <div class="shot dark"><img src="./product_files/LLRsrcPO3QWqhDH39Dd7IInLU.webp" alt="MAYA MAY"></div>
+        <div class="shot"><img src="./Shop_files/TUGoDervhK663h2sPZAFJ5i4wo.webp" alt="MAYA MAY"></div>
+        <div class="thumbs"><img src="./product_files/LLRsrcPO3QWqhDH39Dd7IInLU.webp" alt=""><img src="./Shop_files/TUGoDervhK663h2sPZAFJ5i4wo.webp" alt=""></div>
+      </div>
+      <div class="order">
+        <div class="order-card">
+          <h1>MAYA MAY</h1>
+          <p class="desc">Every jewel begins with a story. Yours starts here. Share a few details with us, and let's shape your Corta Vida piece together.</p>
+          <div class="qtyrow">
+            <div class="qty"><button type="button" onclick="cvq(-1)">–</button><span id="q">1</span><button type="button" onclick="cvq(1)">+</button></div>
+            <input type="text" placeholder="Your size / notes">
+          </div>
+          <p class="hint">If you require a more personalized service, please fill out this form.</p>
+          <a class="submit" href="contact.html">Submit</a>
+        </div>
+        <div class="chips">
+          <span><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/></svg>Exclusivity</span>
+          <span><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 10.5a6 6 0 0 1-12 0C6 10.6 8.5 7.5 12 3z"/></svg>970 Silver</span>
+          <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Worldwide Shipping</span>
+          <span><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5z"/></svg>Handcrafted</span>
+        </div>
+        <div class="bar between small">Instagram<span class="ig"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span></div>
+      </div>
+    </section>
+
+    <div class="bar">Details</div>
+
+    <section class="two-eq">
+      <div class="imgcard"><img src="./product_files/AhMMDy6kimRq5pemJpNjCRyADY.webp" alt="MAYA MAY location"></div>
+      <div class="storycard">
+        <h2>MAYA MAY</h2>
+        <div class='meta'>MAYA MAY</div>
+        <div class='date'>23 de Mayo 2023</div>
+        <p>Where turquoise waters meet limestone cliffs in breathtaking harmony. This piece was inspired by the tranquil beauty of Maya Bay—a place where the ocean’s rhythm and the towering cliffs create a perfect balance.</p><p>Maya Bay, in Thailand, is a hidden cove surrounded by limestone cliffs. Its turquoise water and white sand create a dreamlike, jungleframed paradise in the Andaman Sea</p><p>970 silver: purer, brighter, and more special. Handmade with love, built to last and stand out.</p><p>Your shine, your story, your style.</p>
+      </div>
+    </section>
+
+    <section class="two-eq">
+      <div class="storycard craft">
+        <h2>MAYA MAY</h2>
+        <p>"Creating a unique ring is more than a process—it's a work of patience and dedication. Each piece begins with a detailed design and careful material selection. With skilled hands, it is then cast, shaped, and engraved, paying attention to every line and curve. Finally, it is polished to perfection, ensuring every detail shines. Because the process is so delicate, it requires many hours of work, so each order may take some time. From the first idea to the finished ring, every step reflects handcrafted care and a true passion for jewelry."</p>
+      </div>
+      <div class="imgcard"><img src="./product_files/KLXnwZPdZXcT5H5pBJSx6mhvY.webp" alt="MAYA MAY editorial"></div>
+    </section>
+
+    <div class="bar">You might like</div>
+    <section class="pgrid">
+      <div class="pcard"><div class="tab">PECATU<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/uXHsrQwsqMj1Nse0QoCFyB50yB8.webp" alt="PECATU"></div><div class="pview"><span>View</span></div><a class="plink" href="pecatu.html"></a></div>
+<div class="pcard"><div class="tab">TA'MARIJA<span class="arw">→</span></div><div class="pthumb"><img src="./Shop_files/jjUDc2Wlda6WKMhzMCiNMNgTuY.webp" alt="TA'MARIJA"></div><div class="pview"><span>View</span></div><a class="plink" href="tamarija.html"></a></div>
+<div class="pcard"><div class="tab">MAINGON<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/GjWasE4IwsX63kzsLk8pnJNV0c.webp" alt="MAINGON"></div><div class="pview"><span>View</span></div><a class="plink" href="maingon.html"></a></div>
+<div class="pcard"><div class="tab">GUINSAANAN<span class="arw">→</span></div><div class="pthumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.webp" alt="GUINSAANAN"></div><div class="pview"><span>View</span></div><a class="plink" href="guinsaanan.html"></a></div>
+
+    </section>
+
+    <div class="bar between">Instagram<span class="ig"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span></div>
+    <footer class="footer"><div class="wrap">
+      <div class="foot-left">
+        <div class="foot-brand"><a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.webp" alt="Corta Vida">Corta Vida</a>
+          <p>Unique handcrafted jewelry inspired by journeys, emotions, and the raw beauty of nature's imperfections.</p></div>
+        <div class="foot-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About</a></div>
+        <div class="foot-col"><h4>Help</h4><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="foot-right"><p>Jewelry that captures moments, stories, and individuality.</p></div>
+    </div></footer>
+  </div>
+</div>
+<script>
+var q=1;function cvq(d){q=Math.max(1,q+d);document.getElementById('q').textContent=q;}
+(function(){var t=document.querySelector('.nav-toggle'),n=document.querySelector('.nav-links');if(!t||!n)return;t.addEventListener('click',function(){n.classList.toggle('open');t.classList.toggle('active');document.body.style.overflow=n.classList.contains('open')?'hidden':'';});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.classList.remove('active');document.body.style.overflow='';});});})();
+</script>
+</body>
+</html>
