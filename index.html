@@ -80,13 +80,21 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- products ---------- */
 .products{background:var(--brown);position:relative}
-.prod-track{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:2px 0}
-.card{position:relative;aspect-ratio:107/128;border-radius:3px;overflow:hidden;background:#b8b8b8}
-.card img{width:100%;height:100%;object-fit:cover}
-.card .name{position:absolute;top:14px;left:16px;z-index:2;color:#f2efe9;font-size:13px;letter-spacing:.08em;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-.card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,0)38%);z-index:1}
-.prod-next{position:absolute;right:-6px;top:50%;transform:translateY(-50%);z-index:4;width:34px;height:34px;background:rgba(255,255,255,.14);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:2px}
-.prod-next svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2}
+.prod-track{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:2px 0}
+.card{position:relative;aspect-ratio:104/132;cursor:pointer}
+.card .thumb{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:radial-gradient(120% 95% at 50% 42%,#dcdcda 0%,#a9a9a7 78%,#8f8f8d 100%)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .45s ease}
+.card:hover .thumb img{transform:scale(1.04);filter:brightness(.78) blur(1.5px)}
+.card .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,0)34%);pointer-events:none}
+.card .name{position:absolute;top:17px;left:20px;z-index:3;color:#f4f1ea;font-family:var(--serif);font-size:17px;font-weight:500;letter-spacing:.05em;display:flex;align-items:center;gap:9px;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.card .name .arw{opacity:0;transform:translateX(-5px);transition:.35s ease}
+.card:hover .name .arw{opacity:1;transform:none}
+.card .view{position:absolute;left:14px;right:14px;bottom:14px;z-index:3;background:rgba(14,11,9,.9);color:#fff;border-radius:12px;padding:15px 22px;display:flex;justify-content:flex-end;align-items:center;opacity:0;transform:translateY(10px);transition:.4s ease;pointer-events:none}
+.card:hover .view{opacity:1;transform:none;pointer-events:auto}
+.card .view span{font-size:14px;border-bottom:1px solid rgba(255,255,255,.7);padding-bottom:2px}
+.card .cardlink{position:absolute;inset:0;z-index:4}
+.prod-next{position:absolute;right:-8px;top:50%;transform:translateY(-50%);z-index:4;width:36px;height:36px;background:rgba(60,50,42,.55);backdrop-filter:blur(4px);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:9px}
+.prod-next svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8}
 
 /* ---------- about ---------- */
 .about{background:var(--brown)}
@@ -197,10 +205,10 @@ a{color:inherit;text-decoration:none}
 
     <section class="features">
       <div class="wrap">
-        <div class="feat"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 .5-4 3.5 1.5 5L12 19l-4.5 3 1.5-5-4-3.5 5-.5z"/></svg>970 Silver</div>
+        <div class="feat"><svg viewBox="0 0 24 24"><path d="M12 3c3.5 4.5 6 7.6 6 10.5a6 6 0 0 1-12 0C6 10.6 8.5 7.5 12 3z"/></svg>970 Silver</div>
         <div class="feat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Worldwide Shipping</div>
-        <div class="feat"><svg viewBox="0 0 24 24"><path d="M4 20l7-7M14 4l6 6-9 9-6-6z"/></svg>artisanal</div>
-        <div class="feat"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/></svg>Handcrafted Exclusivity</div>
+        <div class="feat"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5z"/></svg>artisanal</div>
+        <div class="feat"><svg viewBox="0 0 24 24"><path d="M8.5 12V6.2a1.4 1.4 0 0 1 2.8 0V11m0-.6V4.6a1.4 1.4 0 0 1 2.8 0V11m0-.4a1.4 1.4 0 0 1 2.8 0V15a6 6 0 0 1-6 6 5.4 5.4 0 0 1-4.3-2.1l-2.4-3.1a1.5 1.5 0 0 1 2.3-1.9l1.2 1.3"/></svg>Handcrafted Exclusivity</div>
       </div>
     </section>
 
@@ -208,10 +216,10 @@ a{color:inherit;text-decoration:none}
     <section class="products">
       <div class="wrap" style="position:relative">
         <div class="prod-track">
-          <div class="card"><span class="name">BRAZALETE BRUNY ARCH</span><img src="./Home_files/uOJNTH6E7bvUousmmYNElI8zqoQ.jpg" alt="Brazalete Bruny Arch"></div>
-          <div class="card"><span class="name">TUWAD - TUWADAN</span><img src="./Home_files/TUGoDervhK663h2sPZAFJ5i4wo.jpg" alt="Tuwad Tuwadan"></div>
-          <div class="card"><span class="name">DAISY LAKE</span><img src="./Home_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.jpg" alt="Daisy Lake"></div>
-          <div class="card"><span class="name">MAINGON</span><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.jpg" alt="Maingon"></div>
+          <div class="card"><span class="name">BRAZALETE BRUNY ARCH<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/uOJNTH6E7bvUousmmYNElI8zqoQ.jpg" alt="Brazalete Bruny Arch"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Brazalete Bruny Arch"></a></div>
+          <div class="card"><span class="name">TUWAD - TUWADAN<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/TUGoDervhK663h2sPZAFJ5i4wo.jpg" alt="Tuwad Tuwadan"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Tuwad Tuwadan"></a></div>
+          <div class="card"><span class="name">DAISY LAKE<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Iagc3INcOfyXWGkjiAbgvIfIO0Y.jpg" alt="Daisy Lake"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Daisy Lake"></a></div>
+          <div class="card"><span class="name">MAINGON<span class="arw">→</span></span><div class="thumb"><img src="./Home_files/Lk7RLxJgjQy7bBhhC7VrbkMR0Cs.jpg" alt="Maingon"></div><div class="view"><span>View</span></div><a class="cardlink" href="shop.html" aria-label="Maingon"></a></div>
         </div>
         <button class="prod-next" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
