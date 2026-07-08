@@ -222,5 +222,6 @@ a{color:inherit;text-decoration:none}
 function cvSubmit(e){e.preventDefault();document.getElementById('thanks').style.display='block';document.getElementById('cvform').reset();return false;}
 </script>
 <script>(function(){var t=document.querySelector(".nav-toggle"),n=document.querySelector(".nav-links");if(!t||!n)return;t.addEventListener("click",function(){n.classList.toggle("open");t.classList.toggle("active");document.body.style.overflow=n.classList.contains("open")?"hidden":"";});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("open");t.classList.remove("active");document.body.style.overflow="";});});})();</script>
+<script>if("serviceWorker"in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(e){console.warn("SW:",e);});});}</script>
 </body>
 </html>
