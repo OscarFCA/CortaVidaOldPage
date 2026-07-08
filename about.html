@@ -41,22 +41,28 @@ a{color:inherit;text-decoration:none}
 .nav-right svg{width:18px;height:18px;stroke:#efe9df;fill:none;stroke-width:1.5}
 .nav-right .bag{display:flex;align-items:center;gap:7px}
 
-.hero-card{background:var(--brown);border-radius:18px;padding:110px 60px 56px;min-height:380px;display:flex;flex-direction:column}
-.eyebrow{font-family:var(--sans);font-weight:400;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-.hero-card h1{font-family:var(--serif);color:#f2ede4;font-size:52px;font-weight:500;line-height:1.04;max-width:760px}
-.hero-card .lead{margin-top:22px;color:#cabfb2;font-size:17px;line-height:1.55;max-width:640px}
-.hero-card .lead b{color:#e7dfd3;font-weight:600}
-.btn{align-self:flex-start;margin-top:30px;display:inline-block;background:var(--gold);color:#241a12;font-family:var(--sans);font-weight:400;font-size:14px;letter-spacing:.03em;padding:13px 30px;border-radius:40px}
-.btn:hover{filter:brightness(1.06)}
-
-.figure{border-radius:18px;overflow:hidden;height:520px}
-.figure img{width:100%;height:100%;object-fit:cover}
+.about-hero{display:grid;grid-template-columns:1fr 1fr;gap:13px;min-height:880px}
+.ah-img{position:relative;border-radius:18px;overflow:hidden}
+.ah-img img{width:100%;height:100%;object-fit:cover}
+.ah-img .label{position:absolute;left:0;right:0;bottom:0;padding:20px 28px;background:linear-gradient(0deg,rgba(0,0,0,.5),transparent);color:#f2ede4;font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.ah-txt{background:var(--brown);border-radius:18px;padding:70px 66px;display:flex;flex-direction:column;justify-content:center}
+.ah-txt h1{font-family:var(--serif);color:#f2ede4;font-size:54px;font-weight:500;line-height:1.05;margin-bottom:38px}
+.ah-txt p{color:#c7bcae;font-size:17px;line-height:1.62;margin-bottom:24px}
+.ah-txt p b{color:#eadfd0;font-weight:600}
+.btn{align-self:flex-start;margin-top:16px;display:inline-flex;align-items:center;gap:9px;background:#1a130f;color:#f2ede4;font-family:var(--sans);font-weight:300;font-size:14px;letter-spacing:.03em;padding:15px 32px;border-radius:12px}
+.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6}
+.btn:hover{background:#241a13}
 
 .two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .txtcard{background:var(--brown);border-radius:18px;padding:52px 50px}
 .txtcard h2{font-family:var(--serif);color:var(--gold);font-size:32px;font-weight:500;margin-bottom:20px}
 .txtcard p{color:#cabfb2;font-size:16px;line-height:1.6}
 .txtcard p b{color:#eadfd0;font-weight:600}
+
+.collab-panel{background:#fbfbfa;border-radius:16px;overflow:hidden}
+.collab-track{display:flex;align-items:center;gap:78px;padding:30px 0;width:max-content;animation:marq 32s linear infinite}
+.collab-track img{height:42px;width:auto;object-fit:contain}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 .quote{background:var(--cream);border-radius:18px;padding:64px 40px;text-align:center}
 .quote p{font-family:var(--serif);font-style:italic;color:#3a2d28;font-size:29px;line-height:1.3;max-width:820px;margin:0 auto;font-weight:500}
@@ -75,7 +81,7 @@ a{color:inherit;text-decoration:none}
 .foot-right{background:#f3f0ea;border-radius:16px;padding:40px;display:flex;align-items:center}
 .foot-right p{font-family:var(--serif);color:#2a211d;font-size:29px;line-height:1.12;font-weight:500}
 
-@media(max-width:900px){.nav-links{display:none}.two,.footer .wrap,.foot-left{grid-template-columns:1fr}.hero-card h1{font-size:34px}.hero-card{padding:90px 26px 40px}.txtcard{padding:36px 26px}.quote p{font-size:22px}.figure{height:340px}}
+@media(max-width:900px){.nav-links{display:none}.about-hero,.two,.footer .wrap,.foot-left{grid-template-columns:1fr}.about-hero{min-height:0}.ah-img{min-height:360px}.ah-txt{padding:40px 26px}.ah-txt h1{font-size:36px}.txtcard{padding:36px 26px}.quote p{font-size:22px}}
 </style>
 </head>
 <body>
@@ -98,16 +104,27 @@ a{color:inherit;text-decoration:none}
       </div>
     </header>
 
-    <section class="hero-card">
-      <div class="eyebrow">We are Corta Vida</div>
-      <h1>More Than Jewelry,<br>A Story to Wear</h1>
-      <p class="lead">Corta Vida was born from a journey — from fleeting conversations, distant landscapes, and those unrepeatable instants that stay with us forever. Founded by <b>Sofía Rodríguez Calleja</b>, the brand reflects years of exploration across more than 22 countries, where cultures, textures, and emotions became fragments of inspiration.</p>
-      <a class="btn" href="shop.html">Explore</a>
+    <section class="about-hero">
+      <div class="ah-img">
+        <img src="./About_files/tGLZNKbLXJhkVW0MCFjXkniUeWU.png" alt="Sofía Rodríguez Calleja">
+        <div class="label">We are Corta Vida</div>
+      </div>
+      <div class="ah-txt">
+        <h1>More Than Jewelry, A Story to Wear</h1>
+        <p>Corta Vida was born from a journey — from fleeting conversations, distant landscapes, and those unrepeatable instants that stay with us forever. Founded by <b>Sofía Rodríguez Calleja</b>, the brand reflects years of exploration across more than 22 countries, where cultures, textures, and emotions became fragments of inspiration.</p>
+        <p>Each piece is more than an accessory; it is a tangible memory, a fragment of the world transformed into wearable art. With every design, Corta Vida embraces imperfection, individuality, and the beauty of what is real.</p>
+        <a class="btn" href="#craft">Explore <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      </div>
     </section>
 
-    <section class="figure"><img src="./About_files/tGLZNKbLXJhkVW0MCFjXkniUeWU.png" alt="Sofía Rodríguez Calleja"></section>
+    <section class="collab-panel">
+      <div class="collab-track">
+        <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.png" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.png" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.png" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.png" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.png" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.png" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.png" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.png" alt="Muntanya">
+        <img src="./Home_files/mvUb6dLyjuVSzCIHDKITZm7a4.png" alt="ORIA"><img src="./Home_files/M6vp9sOZo9BEosjMzCO1Onc7WH8.png" alt="Andrea Quezada"><img src="./Home_files/FuXXWnx7z4gIw4KbIbqnZaOOrQ4.png" alt="YEYO"><img src="./Home_files/bhn4hrY1ZXX5DZRLO2X4Vi5AzM.png" alt="San Miguel Shoe"><img src="./Home_files/PW0FEC9wKFJmpoHDgfQhICLvRs.png" alt="Tamaulipas Seguro"><img src="./Home_files/QBvgtwnheqi6KmdBHRK03i4Tqds.png" alt="Tequila Diamante Negro"><img src="./Home_files/2VrOlJuM4ea1vzUGHiZatBBvfc.png" alt="Fashion Week Studio"><img src="./Home_files/4vWb92V7kyUX0AsUWO52ukS08zk.png" alt="Muntanya">
+      </div>
+    </section>
 
-    <section class="two">
+    <section class="two" id="craft">
       <div class="txtcard">
         <h2>Our Craft</h2>
         <p>Every jewel is <b>handmade</b> — artisanal, unique, and authentic. Minimalist in form yet bold in character, each piece carries a <b>natural brilliance</b> that doesn't need excess. Inspired by what is <b>simple, real, and enduring</b>, our designs are meant to be lived in, evolving with the person who wears them.</p>
