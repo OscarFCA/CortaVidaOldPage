@@ -57,6 +57,24 @@ a{color:inherit;text-decoration:none}
 .submit{margin-top:8px;background:var(--brown);color:#f2ede4;font-family:var(--sans);font-weight:400;font-size:14px;letter-spacing:.03em;border:none;border-radius:40px;padding:15px 38px;cursor:pointer}
 .submit:hover{filter:brightness(1.12)}
 .thanks{color:#4a7a4a;font-size:14px;margin-top:14px;display:none}
+
+/* blocked form */
+.formwrap{position:relative}
+.formwrap form{filter:blur(3px);opacity:.5;pointer-events:none;user-select:none}
+.form-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:14px}
+.form-lock .lock-badge{width:52px;height:52px;border-radius:50%;background:var(--brown);display:flex;align-items:center;justify-content:center}
+.form-lock .lock-badge svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.form-lock h3{font-family:var(--serif);color:#2a211d;font-size:27px;font-weight:500;line-height:1.1}
+.form-lock p{color:#5c5147;font-size:15px;line-height:1.55;max-width:380px}
+.lock-btns{display:flex;flex-direction:column;gap:11px;width:100%;max-width:320px;margin-top:6px}
+.lock-btn{display:flex;align-items:center;justify-content:center;gap:10px;border-radius:40px;padding:14px 24px;font-family:var(--sans);font-weight:400;font-size:14.5px;letter-spacing:.02em}
+.lock-btn svg{width:19px;height:19px;flex:none}
+.lock-btn.wa{background:#25a35a;color:#fff}
+.lock-btn.wa:hover{filter:brightness(1.06)}
+.lock-btn.wa svg{fill:#fff}
+.lock-btn.ig{background:var(--brown);color:#f2ede4}
+.lock-btn.ig:hover{filter:brightness(1.14)}
+.lock-btn.ig svg{stroke:#f2ede4;fill:none;stroke-width:1.6}
 .contact-img{border-radius:18px;overflow:hidden;min-height:560px}
 .contact-img img{width:100%;height:100%;object-fit:cover}
 
@@ -144,7 +162,17 @@ a{color:inherit;text-decoration:none}
     <section class="contact">
       <div class="formcard">
         <p class="note">Fill out the form and our team will get back to you soon. Your journey with Corta Vida starts here.</p>
-        <form id="cvform" onsubmit="return cvSubmit(event)">
+        <div class="formwrap">
+        <div class="form-lock">
+          <div class="lock-badge"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>El formulario está en pausa</h3>
+          <p>Por ahora este formulario no está disponible. Pero nos encantaría platicar contigo: escríbele directamente a Sofía por WhatsApp o encuéntranos en Instagram.</p>
+          <div class="lock-btns">
+            <a class="lock-btn wa" href="https://wa.me/524271186604?text=Hola%20Sof%C3%ADa%2C%20me%20encanta%20Corta%20Vida%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20una%20pieza%20hecha%20a%20mi%20medida%20%E2%9C%A6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.4-5.1-4.6-.2-.2-1.3-1.7-1.3-3.2 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg>Platicar con Sofía por WhatsApp</a>
+            <a class="lock-btn ig" href="https://www.instagram.com/cortavida_oficial" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Síguenos en Instagram</a>
+          </div>
+        </div>
+        <form id="cvform" onsubmit="return false" aria-hidden="true"><fieldset disabled style="border:none;padding:0;margin:0;min-width:0">
           <div class="grid2">
             <div class="field"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
             <div class="field"><label>Phone Number</label><input type="tel" name="phone" placeholder="+52 ..."></div>
@@ -167,7 +195,8 @@ a{color:inherit;text-decoration:none}
           <div class="field"><label>Notes</label><textarea name="notes" placeholder="Tell us what you have in mind..."></textarea></div>
           <button class="submit" type="submit">Submit</button>
           <div class="thanks" id="thanks">Thank you — we'll be in touch soon. ✦</div>
-        </form>
+        </fieldset></form>
+        </div>
       </div>
       <div class="contact-img"><img src="./Contact_files/T6CLhkTkQ2DH0Er10GZORfLRk.webp" alt="Corta Vida jewelry"></div>
     </section>
