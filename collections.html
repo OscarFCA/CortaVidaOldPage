@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collections — Corta Vida</title>
+<link rel="icon" href="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#3b2d28;--gold:#b98f5b;--cream:#f3f0ea;--ink:#2a211d;--frame:#15100d;
+  --serif:'Cormorant Garamond',Georgia,serif;--body:'EB Garamond',Georgia,serif;--sans:'Poppins',-apple-system,Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--frame);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:none;margin:0;padding:0}
+.frame{padding:13px;background:var(--frame)}
+.page{position:relative;background:var(--frame);display:flex;flex-direction:column;gap:13px}
+
+.announce{background:var(--cream);color:#3f352e;border-radius:16px;overflow:hidden;white-space:nowrap;padding:11px 0;margin-bottom:13px}
+.announce .marq{display:inline-block;white-space:nowrap;animation:announce 34s linear infinite;font-size:15px}
+.announce .marq span{padding:0 6px;opacity:.9}
+@keyframes announce{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.header{position:absolute;top:17px;left:17px;right:17px;z-index:30}
+.nav{background:rgba(26,20,16,.32);backdrop-filter:blur(11px);-webkit-backdrop-filter:blur(11px);border-radius:46px;padding:11px 26px;display:flex;align-items:center;gap:32px;color:#efe9df}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;font-weight:500}
+.brand img{width:27px;height:27px;object-fit:contain;filter:brightness(1.35) contrast(1.05)}
+.nav-links{display:flex;gap:26px;font-family:var(--sans);font-weight:300;font-size:14px;letter-spacing:.02em}
+.nav-links a{opacity:.94}
+.drop{position:relative}
+.drop>span{cursor:pointer;opacity:.94}
+.drop-menu{position:absolute;top:calc(100% + 16px);left:-14px;background:rgba(24,18,14,.94);backdrop-filter:blur(11px);border-radius:14px;padding:7px;display:flex;flex-direction:column;min-width:150px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s ease}
+.drop:hover .drop-menu{opacity:1;visibility:visible;transform:none}
+.drop-menu a{padding:10px 15px;border-radius:9px;font-size:14px;opacity:.9}
+.drop-menu a:hover{background:rgba(255,255,255,.08);opacity:1}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:18px;font-family:var(--sans);font-weight:300;font-size:14px}
+.nav-right svg{width:18px;height:18px;stroke:#efe9df;fill:none;stroke-width:1.5}
+.nav-right .bag{display:flex;align-items:center;gap:7px}
+
+/* hero */
+.hero{position:relative;height:680px;overflow:hidden;background:#1c1512;border-radius:18px}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28)0%,rgba(0,0,0,.02)30%,rgba(0,0,0,.12)70%,rgba(0,0,0,.34)100%);z-index:2}
+.hero-card{position:absolute;left:34px;bottom:118px;z-index:5;background:rgba(30,24,20,.34);backdrop-filter:blur(3px);padding:28px 34px;max-width:440px;border-radius:12px}
+.hero-card h1{font-family:var(--serif);color:#f2ede4;font-weight:500;font-size:38px;line-height:1.1;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+.hero-card a{display:inline-block;margin-top:16px;color:#e9e2d6;font-size:15px;border-bottom:1px solid rgba(233,226,214,.55);padding-bottom:2px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer}
+.hero-arrow svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.4;filter:drop-shadow(0 1px 6px rgba(0,0,0,.5))}
+.hero-arrow.prev{left:24px}.hero-arrow.next{right:24px}
+
+/* label bar */
+.bar{background:var(--brown);text-align:center;padding:18px 22px;color:var(--gold);font-family:var(--serif);font-size:18px;letter-spacing:.06em;border-radius:16px}
+.bar.between{display:flex;align-items:center;justify-content:center;position:relative}
+.bar .ig{position:absolute;right:24px;top:50%;transform:translateY(-50%)}
+.bar .ig svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+
+/* collections */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.col{position:relative;border-radius:18px;overflow:hidden;height:640px;display:flex;align-items:center;justify-content:center}
+.col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.col:hover img{transform:scale(1.04)}
+.col::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);z-index:1}
+.col h2{position:relative;z-index:2;font-family:var(--serif);color:#fff;font-size:40px;font-weight:500;text-shadow:0 2px 16px rgba(0,0,0,.45)}
+.col .arw{position:absolute;right:24px;bottom:22px;z-index:2;color:var(--gold)}
+.col .arw svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* footer */
+.footer .wrap{display:grid;grid-template-columns:1.9fr 1.1fr;gap:14px}
+.foot-left{background:#f3f0ea;border-radius:16px;padding:34px 40px;display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:20px}
+.foot-brand{display:flex;flex-direction:column;gap:14px}
+.foot-brand .brand{color:#2a211d}.foot-brand .brand img{filter:none}
+.foot-brand p{color:#5c5147;font-size:14px;line-height:1.45;max-width:230px}
+.foot-col h4{color:#8a7d70;font-size:13px;font-weight:500;letter-spacing:.04em;margin-bottom:12px}
+.foot-col a{display:block;color:#2a211d;font-size:14px;margin-bottom:8px}
+.foot-right{background:#f3f0ea;border-radius:16px;padding:40px;display:flex;align-items:center}
+.foot-right p{font-family:var(--serif);color:#2a211d;font-size:29px;line-height:1.12;font-weight:500}
+
+@media(max-width:900px){.nav-links{display:none}.cols,.footer .wrap,.foot-left{grid-template-columns:1fr}.col{height:420px}.hero-card h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="announce"><div class="marq"><span>✦ Discover the essence of Fracta. &nbsp;–&nbsp; Handcrafted. Unique. Coming soon to your story. &nbsp;–&nbsp; A new chapter begins — Discover Corta Vida.</span><span>✦ Discover the essence of Fracta. &nbsp;–&nbsp; Handcrafted. Unique. Coming soon to your story. &nbsp;–&nbsp; A new chapter begins — Discover Corta Vida.</span></div></div>
+
+  <div class="page">
+    <header class="header">
+      <div class="nav">
+        <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">Corta Vida</a>
+        <nav class="nav-links">
+          <a href="shop.html">Shop</a>
+          <a href="collections.html">Collections</a>
+          <div class="drop"><span>About&nbsp;+</span><div class="drop-menu"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        </nav>
+        <div class="nav-right">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <span class="bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>(0)</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <video src="./assets/fp6fYYiLjjxXyNy6eDZjxL0ZX54.mp4" autoplay muted loop playsinline></video>
+      <button class="hero-arrow prev" aria-label="prev"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+      <button class="hero-arrow next" aria-label="next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+      <div class="hero-card">
+        <h1>Fashion Week Studio<br>Milan</h1>
+        <a href="#collections">Discover the Fashion Week</a>
+      </div>
+    </section>
+
+    <div class="bar">Our Colections</div>
+
+    <section class="cols" id="collections">
+      <a class="col" href="mayahuel.html">
+        <img src="./Home_files/b5LmDjx40NiyJRrqcmZ2JxSUQ.jpg" alt="Mayahuel">
+        <h2>Mayahuel</h2>
+        <span class="arw"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="col" href="fracta.html">
+        <img src="./Home_files/8jXcugae0Zj5beAnODovUO1U4Y.jpg" alt="Fracta">
+        <h2>Fracta</h2>
+        <span class="arw"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6l6 6-6 6"/></svg></span>
+      </a>
+    </section>
+
+    <div class="bar between">Instagram<span class="ig"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span></div>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="foot-left">
+          <div class="foot-brand">
+            <a class="brand" href="index.html"><img src="./Home_files/XYP6DL2XcWk1KXfIEWxDAbROyM.png" alt="Corta Vida">Corta Vida</a>
+            <p>Unique handcrafted jewelry inspired by journeys, emotions, and the raw beauty of nature's imperfections.</p>
+          </div>
+          <div class="foot-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About</a></div>
+          <div class="foot-col"><h4>Help</h4><a href="contact.html">Contact</a></div>
+        </div>
+        <div class="foot-right"><p>Jewelry that captures moments, stories, and individuality.</p></div>
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
